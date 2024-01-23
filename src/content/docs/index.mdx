@@ -1,0 +1,29 @@
+---
+title: Design with Superpowers
+description: Get started designing with Structured Rapid Development.
+template: splash
+hero:
+  tagline: Accelerate Your Project With WGU's Design Patterns and Workflows
+  image:
+    file: ../../assets/houston.webp
+  actions:
+    - text: Get Started
+      link: /guides/get-started/
+      icon: right-arrow
+      variant: primary
+---
+import react from 'react';
+import { default as ComponentsFeature } from '../../ui-components/ComponentsFeature.jsx';
+
+import { LowFiPageLayout } from '../../ui-components/LowFiPageLayout.tsx';
+
+<div class="bg-slate-900 w-screen m-0 p-0">
+<LowFiPageLayout 
+  title="Title Here" 
+  description="Ensure a collection directory with this name exists." 
+  XBlocks={['video','text','text']}
+/>
+
+</div>
+
+<ComponentsFeature />

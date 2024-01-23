@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+	.all-\[unset\] {
+	  all: unset;
+	}
+  }
+  
+  :root {
+	--drop-shadow-100: 0px 4px 8px 0px rgba(0, 0, 0, 0.1);
+	--primary-0: rgba(255, 255, 255, 1);
+  }
+
+#diagram {
+	line-height: 1 !important;
+}

@@ -1,0 +1,55 @@
+---
+title: Competencies
+---
+import { Card } from '@astrojs/starlight/components';
+import { default as CollapseCard } from '../../../ui-components/CollapseCard.jsx';
+
+Competencies are the fundamental building block of learning at WGU. They are a "measurable, assessable capability of an individual to successfully complete activities and perform tasks at a determined level, ranging from a fundamental awareness to advanced application of knowledge and skills"[^1].
+
+When writing competencies, designers define its title, statement, level, and identify contributing skills (RSDs).
+
+<details>
+  <summary><b>View the technical specs for competencies</b></summary>
+
+| Field Name                         | Data Type     | Description                                                                                                                                                                                                                                                 | Term IRI                 |
+| ---------------------------------- | ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------ |
+| ID                                 | URI           | Canonical URL that uniquely identifies the competency, from which more information may be retrieved.                                                                                                                                                        | @id                      |
+| Competency Title                   | String        | Short name or label for the competency.                                                                                                                                                                                                                     | ceasn:competencyLabel    |
+| Competency Statement               | String        | Competency statements and titles must adhere to a standardized syntax to support readability, assessment, and reusability. [^2]                                                                                                                             | ceasn:competencyText     |
+| Competency Level                   | Integer 1-4   |                                                                                                                                                                                                                                                             |                          |
+| Keywords                           | Array[String] | List of keyword strings to enhance searchability.                                                                                                                                                                                                           | ceterms:keyword          |
+| Category                           | String        | A category in which this RSD is filed, in the local vocabulary defined by the issuer                                                                                                                                                                        | ceasn:competencyCategory |
+| Author                             | Array[String] | One or more individuals or organizations responsible for the intellectual or artistic content of this competency.                                                                                                                                           | ceasn:author             |
+| Alignments                         | Array[URI]    | Indicates alignment or overlap of this competency to one or more underlying standards, skills, or competencies identified in other frameworks or data sources (i.e.,Emsi; Burning Glass; LinkedIn; Workday), each of which is uniquely identified by a URI. | ceasn:majorAlignment     |
+| Credential Transparency Identifier | Array[String] | Unique Credential Transparency Identifier assigned by the creator perhaps through publication to the Credential Engine Registry. Uniqueness can only be guaranteed for entities submitted to the Credential Engine Registry.                                | ceterms:ctid             |
+| License                            | URI           | A legal document giving official permission to do something with this resource.                                                                                                                                                                             | ceasn:license            |
+| Derived From                       | URI           | An indicator that the present competency is a derivative work of another competency.                                                                                                                                                                        | ceasn:derivedFrom        |
+
+</details>
+
+Competencies have three required primary parts: an introduction, the lesson(s), and an outro.
+
+
+```mermaid
+%%{init: {'theme':'neutral'}}%%
+flowchart LR
+    A([1. Intro])
+    B([2. Lessons])
+    C([3. Outro])
+A -- Prepares learner for --> B -- Is tested by --> C
+click A "/patterns/structural/intro/"
+click B "/components/lessons/"
+click C "/patterns/structural/outro/"
+```
+
+## 1. Competency Intro
+The competency's introduction should welcome the student to the competency and make the case for why the skills they'll learn will be valuable. 
+
+
+## 2. Lesson(s)
+
+## 3. Competency Outro
+
+___
+[^1]: [Competency Syntax, WGU Guidance System](https://guidance.wgu.edu/standards/knowledge-base/competency-syntax/)
+[^2]: [Competency Syntax Details, WGU Guidance System](https://guidance.wgu.edu/standards/knowledge-base/competency-syntax/#competency-syntax)
